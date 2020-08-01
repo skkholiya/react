@@ -15,12 +15,14 @@ class App extends Component {
  //Componet life cycle phase 1
  constructor(){
    super();
+   console.log("App-Constructor");
    //constructor only call once when an instance of a class is created.
   //Right place to initializing the properties in that instance or in this class. e.g this.state = this.props.something
   // to accessing the props properties we must define props in constructor and super
  }
 
  componentDidMount(){
+   console.log("App-Mounted");
    //is called after our component is rendered into the dom
    //it is right place to call ajax to get data from the server. e.g this.setState({list or etc.})
  }
@@ -46,6 +48,7 @@ class App extends Component {
     this.setState({counts:rest});
  };
   render() { 
+    console.log("App-rendered");
     return ( 
     <React.Fragment>
     <NavBar totalNumberCount={this.state.counts.filter(cnt=>cnt.value>0).length}></NavBar>
